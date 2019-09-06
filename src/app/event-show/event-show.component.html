@@ -1,0 +1,59 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0,
+	user-scalable=no">
+
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color:black">
+
+  <a class="navbar-brand" [routerLink]="['/home']">Meeting Planner</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+    <ul class="navbar-nav">
+
+      <li class="nav-item active">
+
+        <a class="nav-link" (click)="logout()">LogOut</a>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+
+<div class="container">
+  <div class="row p-0 m-0">
+
+    <div class="col-sm"></div>
+  
+    <div class="col-sm p-5">
+
+      <h2>Event Details</h2>
+
+      <span>Event Title: {{title}}</span>
+      <br>
+      <span>Event Date: {{date}}</span>
+      <br>
+      <span>Event Place: {{place}}</span>
+      <br>
+      <span>Event Purpose: {{purpose}}</span>
+
+      <div *ngIf="adminCheck">
+          <button class="btn btn-lg btn-warning btn-block" type="button" (click)="goToEdit()">Edit</button>
+          <button class="btn btn-lg btn-danger btn-block" type="button" (click)="deleteSingleEventFunction()">Delete</button>
+      </div>
+
+    </div>
+
+    <div class="col-sm"></div>
+
+    </div>
+
+</div>
